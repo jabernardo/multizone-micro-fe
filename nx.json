@@ -39,10 +39,17 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
   },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  },
   "generators": {
     "@nrwl/react": {
       "application": {
         "babel": true
+      },
+      "library": {
+        "unitTestRunner": "jest"
       }
     },
     "@nrwl/next": {

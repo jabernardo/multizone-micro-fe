@@ -1,0 +1,30 @@
+version: '3.6'
+
+services:
+  about:
+    build:
+      context: .
+      dockerfile: ./apps/about/Dockerfile
+    expose:
+      - 3001
+    ports:
+      - 3001:3001
+    networks:
+      - default
+
+  host:
+    build:
+      context: .
+      dockerfile: ./apps/host/Dockerfile
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    depends_on:
+      - about
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge

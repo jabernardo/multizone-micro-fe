@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import { LinkComponent } from '@micro-fe/components'
+import { LinkComponent } from '@micro-fe/components';
 
 export function Index() {
   /*
@@ -9,8 +9,8 @@ export function Index() {
    */
   return (
     <div className={styles.page}>
-      <h1>Host App</h1>
-      <LinkComponent href="/about" text="Goto About MicroFrontend" />
+      <h1>About Page</h1>
+      <LinkComponent href="/" text="Goto Home Microfrontend" />
     </div>
   );
 }

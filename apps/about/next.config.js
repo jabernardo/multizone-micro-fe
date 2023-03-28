@@ -3,8 +3,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { withNx } = require('@nrwl/next/plugins/with-nx');
 
-const DOMAIN = process.env.DOMAIN || 'localhost'
-
 /**
  * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
  **/
@@ -14,22 +12,7 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
-  async rewrites() {
-    return [
-      {
-        source: '/:path*',
-        destination: '/:path*'
-      },
-      {
-        source: '/about',
-        destination: `http://${DOMAIN}:3001/about`
-      },
-      {
-        source: '/about/:path*',
-        destination: `http://${DOMAIN}:3001/about/:path*`
-      }
-    ]
-  }
+  basePath: '/about'
 };
 
 module.exports = withNx(nextConfig);
